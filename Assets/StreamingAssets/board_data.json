@@ -1,0 +1,24 @@
+{
+  "tiles": [
+    { "itemType": "None",       "amount": 0  },
+    { "itemType": "Apple",      "amount": 5  },
+    { "itemType": "Pear",       "amount": 3  },
+    { "itemType": "None",       "amount": 0  },
+    { "itemType": "Strawberry", "amount": 8  },
+    { "itemType": "Apple",      "amount": 2  },
+    { "itemType": "None",       "amount": 0  },
+    { "itemType": "Pear",       "amount": 6  },
+    { "itemType": "Apple",      "amount": 10 },
+    { "itemType": "None",       "amount": 0  },
+    { "itemType": "Strawberry", "amount": 15 },
+    { "itemType": "Apple",      "amount": 4  },
+    { "itemType": "None",       "amount": 0  },
+    { "itemType": "Pear",       "amount": 7  },
+    { "itemType": "Strawberry", "amount": 3  },
+    { "itemType": "None",       "amount": 0  },
+    { "itemType": "Apple",      "amount": 8  },
+    { "itemType": "Pear",       "amount": 5  },
+    { "itemType": "None",       "amount": 0  },
+    { "itemType": "Strawberry", "amount": 12 }
+  ]
+}
