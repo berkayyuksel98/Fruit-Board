@@ -64,7 +64,7 @@ public class DiceInputUI : MonoBehaviour
         {
             var rowGO = Instantiate(diceInputRowPrefab, diceInputsContainer);
             var row = rowGO.GetComponent<DiceInputRow>();
-            row.Setup($"Dicee {i + 1}");
+            row.Setup($"Dice {i + 1}:");
             inputRows.Add(row);
         }
     }
@@ -74,6 +74,7 @@ public class DiceInputUI : MonoBehaviour
         for (int i = 0; i < inputRows.Count; i++)
         {
             if (int.TryParse(inputRows[i].GetValue(), out int value)){
+                value = Mathf.Clamp(value,1,6);
                 diceController.SetDiceValue(i, value);
             }
         }

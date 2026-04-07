@@ -50,10 +50,8 @@ MonoBehaviour:
   throwClips:
   - {fileID: 7400000, guid: 18ab9a1718edd4ce587fbb9c40f8610a, type: 2}
   - {fileID: 7400000, guid: 46d26f451239b43dfa2cad3bd419900d, type: 2}
-  throwTriggers:
-  - A0
-  - A1
-  clipEndFaces: 0200000002000000
+  - {fileID: 7400000, guid: 00df3d6b66cf64156b345677b842b26a, type: 2}
+  clipEndFaces: 020000000200000002000000
   faceDirections:
   - {x: -1, y: 0, z: 0}
   - {x: 1, y: 0, z: 0}
@@ -164,8 +162,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1517977147173825109}
   - component: {fileID: 3199947473227244692}
-  - component: {fileID: 5448649782210204543}
-  - component: {fileID: 4133122109596218834}
+  - component: {fileID: 7398188663528254876}
   m_Layer: 0
   m_Name: Dice
   m_TagString: Untagged
@@ -188,7 +185,7 @@ Transform:
   m_Children:
   - {fileID: 7651307156761941618}
   m_Father: {fileID: 3129269752093485302}
-  m_LocalEulerAnglesHint: {x: 12.024161, y: 87.22441, z: 115.76941}
+  m_LocalEulerAnglesHint: {x: 5.351115, y: 2.8766704, z: 5.163058}
 --- !u!95 &3199947473227244692
 Animator:
   serializedVersion: 7
@@ -211,56 +208,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!33 &5448649782210204543
-MeshFilter:
+--- !u!114 &7398188663528254876
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6325349958252561873}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &4133122109596218834
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6325349958252561873}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b3180fd4b51f43f4898c51cb4305661, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

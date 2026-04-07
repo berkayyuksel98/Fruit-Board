@@ -21,7 +21,7 @@ public class GameInstaller : MonoBehaviour
     [SerializeField] private DiceInputUI diceInputUI;
 
     [Header("Effects")]
-    [SerializeField] private ParticleEffectController particleEffectController;
+    [SerializeField] private AudioController audioController;
 
     [Header("Config")]
     [SerializeField] private GameConfigSO gameConfig;
@@ -41,8 +41,8 @@ public class GameInstaller : MonoBehaviour
 
         playerController.Initialize();
         diceInputUI.Initialize(diceController);
-        particleEffectController.Initialize();
-
+        
+        audioController.Initialize();
         boardController.Initialize();
     }
 

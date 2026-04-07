@@ -1,7 +1,5 @@
 using UnityEngine;
 
-using UnityEngine;
-
 public class PlayerPrefsPersistence : IDataPersistence
 {
     private const string ApplesKey = "inventory_apples";

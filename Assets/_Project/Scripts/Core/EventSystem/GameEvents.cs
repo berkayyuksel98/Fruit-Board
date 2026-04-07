@@ -36,6 +36,8 @@ public struct OnPlayerLanded
     public int tileIndex;
 }
 
+public struct OnPlayerHitGround{}
+
 public struct OnGameInputLocked
 {
     public bool isLocked;
@@ -50,6 +52,8 @@ public struct OnDiceAnimationsComplete
 {
     public int totalValue;
 }
+
+public struct OnDiceHitGround{}
 
 public struct OnDiceHidden
 {

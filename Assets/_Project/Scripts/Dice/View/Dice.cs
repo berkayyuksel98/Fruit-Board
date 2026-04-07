@@ -20,8 +20,6 @@ public class Dice : MonoBehaviour
 
     public AnimationClip[] throwClips;
 
-    [SerializeField] private string[] throwTriggers;
-
     [SerializeField] private int[] clipEndFaces;
 
 
@@ -109,10 +107,9 @@ public class Dice : MonoBehaviour
     private IEnumerator PlayThrowAnimation(int clipIndex, Action onComplete)
     {
         AnimationClip clip = throwClips[clipIndex];
-        string trigger = (throwTriggers != null && clipIndex < throwTriggers.Length)
-                                    ? throwTriggers[clipIndex] : null;
+        string trigger = "A"+clipIndex.ToString();
 
-        diceAnimator.SetFloat("AnimationSpeed", 1.5f * UnityEngine.Random.Range(0.75f, 1.33f));
+        diceAnimator.SetFloat("AnimationSpeed", 1.75f * UnityEngine.Random.Range(0.75f, 1.33f));
         if (!string.IsNullOrEmpty(trigger))
             diceAnimator.SetTrigger(trigger);
         else

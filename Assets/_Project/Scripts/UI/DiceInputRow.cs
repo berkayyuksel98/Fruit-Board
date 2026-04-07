@@ -10,14 +10,24 @@ public class DiceInputRow : MonoBehaviour
     {
         if (inputField == null) return;
 
-        inputField.contentType    = TMP_InputField.ContentType.IntegerNumber;
-        inputField.characterLimit = 2;
-        inputField.text           = "1";
+        inputField.contentType = TMP_InputField.ContentType.IntegerNumber;
+        inputField.characterLimit = 1;
+        inputField.text = "1";
+        inputField.onValueChanged.AddListener(OnInputValueChanged);
+    }
+
+    private void OnInputValueChanged(string value)
+    {
+        if (int.TryParse(inputField.text, out int parsedValue))
+        {
+            parsedValue = Mathf.Clamp(parsedValue, 1, 6);
+            inputField.text = parsedValue.ToString();
+        }
     }
 
     public void Setup(string labelText)
     {
-        if (label      != null) label.text      = labelText;
+        if (label != null) label.text = labelText;
         if (inputField != null) inputField.text = "1";
     }
 

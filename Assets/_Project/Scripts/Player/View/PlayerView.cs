@@ -41,7 +41,8 @@ public class PlayerView : MonoBehaviour
             yield return null;
         }
         transform.position = target;
-        landingParticles?.Emit(0);
+        landingParticles?.Play();
+        EventBus.Raise(new OnPlayerHitGround());
         onLanded?.Invoke();
     }
 }

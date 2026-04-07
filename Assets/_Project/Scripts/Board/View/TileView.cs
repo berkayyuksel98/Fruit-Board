@@ -14,13 +14,13 @@ public class TileView : MonoBehaviour
     [SerializeField] private Color rewardColor;
 
     [Header("Highlight Animation")]
-    [SerializeField] private Vector3 highlightScale   = new Vector3(1.2f, 1.2f, 1.2f);
-    [SerializeField] private float   highlightDuration = 0.2f;
+    [SerializeField] private Vector3 highlightScale = new Vector3(1.2f, 1.2f, 1.2f);
+    [SerializeField] private float highlightDuration = 0.2f;
     [SerializeField] private AnimationCurve highlightCurve = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f);
 
-    private TileModel  tileModel;
-    private Coroutine  scaleCoroutine;
-    private Vector3    baseScale;
+    private TileModel tileModel;
+    private Coroutine scaleCoroutine;
+    private Vector3 baseScale;
 
     private void Awake() => baseScale = transform.localScale;
 
@@ -28,7 +28,7 @@ public class TileView : MonoBehaviour
     {
         tileModel = model;
 
-        indexText.text = model.index.ToString();
+        indexText.text = (model.index+1).ToString();
 
         if (model.hasReward)
         {
@@ -74,8 +74,8 @@ public class TileView : MonoBehaviour
 
     private IEnumerator AnimateScale(Vector3 target)
     {
-        Vector3 start   = transform.localScale;
-        float   elapsed = 0f;
+        Vector3 start = transform.localScale;
+        float elapsed = 0f;
 
         while (elapsed < highlightDuration)
         {
