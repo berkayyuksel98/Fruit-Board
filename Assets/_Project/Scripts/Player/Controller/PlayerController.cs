@@ -33,11 +33,12 @@ public class PlayerController : MonoBehaviour, IInitializable
             current = (current + 1) % e.totalTileCount;
             playerModel.MoveTo(current);
 
-            playerView.MoveToTile(current);
-
-            EventBus.Raise(new OnPlayerMoved { tileIndex = current });
+            playerView.MoveToTile(current, onLanded: () =>
+                EventBus.Raise(new OnPlayerMoved { tileIndex = current })
+            );
 
             yield return new WaitForSeconds(gameConfig.playerMoveDuration);
+            yield return new WaitForSeconds(gameConfig.playerWaitTime);
         }
 
         EventBus.Raise(new OnPlayerLanded { tileIndex = playerModel.currentTileIndex });

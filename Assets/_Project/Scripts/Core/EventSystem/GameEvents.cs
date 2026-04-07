@@ -45,3 +45,13 @@ public struct OnBoardBuilt
 {
     public IReadOnlyList<TileModel> tiles;
 }
+
+public struct OnDiceAnimationsComplete
+{
+    public int totalValue;
+}
+
+public struct OnDiceHidden
+{
+    public int totalValue;
+}

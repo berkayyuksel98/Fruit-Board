@@ -14,7 +14,7 @@ public class BoardController : MonoBehaviour, IInitializable
         boardModel = BuildBoard();
         currentTileIndex = 0;
 
-        EventBus.Subscribe<OnDiceRolled>(HandleDiceRolled);
+        EventBus.Subscribe<OnDiceHidden>(HandleDiceAnimationsComplete);
         EventBus.Subscribe<OnPlayerLanded>(HandlePlayerLanded);
 
         EventBus.Raise(new OnBoardBuilt { tiles = boardModel.tiles });
@@ -22,11 +22,11 @@ public class BoardController : MonoBehaviour, IInitializable
 
     private void OnDestroy()
     {
-        EventBus.Unsubscribe<OnDiceRolled>(HandleDiceRolled);
+        EventBus.Unsubscribe<OnDiceHidden>(HandleDiceAnimationsComplete);
         EventBus.Unsubscribe<OnPlayerLanded>(HandlePlayerLanded);
     }
 
-    private void HandleDiceRolled(OnDiceRolled e)
+    private void HandleDiceAnimationsComplete(OnDiceHidden e)
     {
         int targetIndex = boardModel.WrapIndex(currentTileIndex, e.totalValue);
 

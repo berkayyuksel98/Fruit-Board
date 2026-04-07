@@ -9,8 +9,8 @@ public class GameConfigSO : ScriptableObject
     public int maxDiceCount = 20;
 
     [Header("Animation Settings")]
-    public float diceAnimationDuration = 1f;
     public float playerMoveDuration = 0.3f;
+    public float playerWaitTime = 0.1f;
 
     [Header("Item Data")]
     public ItemDataSO[] items;

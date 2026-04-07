@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -14,35 +15,33 @@ public class PlayerView : MonoBehaviour
 
     private Coroutine moveCoroutine;
 
-    public void MoveToTile(int tileIndex)
+    public void MoveToTile(int tileIndex, Action onLanded = null)
     {
         Vector3 target = new Vector3(tileIndex * boardConfig.tileSpacing, 0f, 0f);
 
         if (moveCoroutine != null)
             StopCoroutine(moveCoroutine);
 
-        moveCoroutine = StartCoroutine(AnimateMove(target));
+        moveCoroutine = StartCoroutine(AnimateMove(target, onLanded));
     }
 
-    private IEnumerator AnimateMove(Vector3 target)
+    private IEnumerator AnimateMove(Vector3 target, Action onLanded)
     {
-        Vector3 start  = transform.position;
+        Vector3 start = transform.position;
         float duration = gameConfig.playerMoveDuration;
-        float elapsed  = 0f;
+        float elapsed = 0f;
 
         while (elapsed < duration)
         {
-            float t   = elapsed / duration;
+            float t = elapsed / duration;
             Vector3 p = Vector3.Lerp(start, target, t);
-
             p.y += Mathf.Sin(t * Mathf.PI) * bounceHeight;
-
             transform.position = p;
             elapsed += Time.deltaTime;
             yield return null;
         }
-
         transform.position = target;
-        landingParticles?.Play();
+        landingParticles?.Emit(0);
+        onLanded?.Invoke();
     }
 }

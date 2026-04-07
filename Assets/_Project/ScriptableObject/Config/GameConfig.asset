@@ -15,8 +15,8 @@ MonoBehaviour:
   defaultDiceCount: 2
   minDiceCount: 1
   maxDiceCount: 20
-  diceAnimationDuration: 1
-  playerMoveDuration: 0.3
+  playerMoveDuration: 0.35
+  playerWaitTime: 0.05
   items:
   - {fileID: 11400000, guid: 50b08f85079dc49f5b001fb71be90c81, type: 2}
   - {fileID: 11400000, guid: b78b443e5a5344a12bcde74864376147, type: 2}

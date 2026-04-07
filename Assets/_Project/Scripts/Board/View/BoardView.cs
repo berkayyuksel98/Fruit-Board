@@ -4,6 +4,7 @@ using UnityEngine;
 public class BoardView : MonoBehaviour, IInitializable
 {
     [SerializeField] private BoardConfigSO boardConfig;
+    [SerializeField] private GameConfigSO gameConfig;
     [SerializeField] private Transform boardParent;
 
     private readonly List<TileView> tileViews = new();
@@ -39,7 +40,7 @@ public class BoardView : MonoBehaviour, IInitializable
             var go = Instantiate(boardConfig.tilePrefab, position, Quaternion.identity, boardParent);
 
             var tileView = go.GetComponent<TileView>();
-            tileView.Setup(tile);
+            tileView.Setup(tile, gameConfig);
             tileViews.Add(tileView);
         }
 

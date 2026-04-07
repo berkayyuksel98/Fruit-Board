@@ -63,8 +63,8 @@ public class DiceInputUI : MonoBehaviour
         for (int i = 0; i < count; i++)
         {
             var rowGO = Instantiate(diceInputRowPrefab, diceInputsContainer);
-            var row   = rowGO.GetComponent<DiceInputRow>();
-            row.Setup($"Die {i + 1}:");
+            var row = rowGO.GetComponent<DiceInputRow>();
+            row.Setup($"Dicee {i + 1}");
             inputRows.Add(row);
         }
     }
@@ -73,8 +73,9 @@ public class DiceInputUI : MonoBehaviour
     {
         for (int i = 0; i < inputRows.Count; i++)
         {
-            if (int.TryParse(inputRows[i].GetValue(), out int value))
+            if (int.TryParse(inputRows[i].GetValue(), out int value)){
                 diceController.SetDiceValue(i, value);
+            }
         }
 
         SetInputLocked(true);
@@ -85,7 +86,7 @@ public class DiceInputUI : MonoBehaviour
 
     private void SetInputLocked(bool locked)
     {
-        rollButton.interactable        = !locked;
+        rollButton.interactable = !locked;
         diceCountDropdown.interactable = !locked;
 
         foreach (var row in inputRows)
