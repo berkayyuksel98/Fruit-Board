@@ -4,6 +4,14 @@ Monopoly GO tarzından ilham alınarak yapılmış, 3D tek oyunculu bir board ga
 
 ---
 
+# Core Gameplay Preview
+
+
+https://github.com/user-attachments/assets/85b28882-82c4-4776-ac99-97e1768e2786
+
+
+---
+
 ## Nasıl Çalışır
 
 Oyuncu zar atar, çıkan sayı kadar tile ilerler. Her tile'da ödül olabilir, olursa envanteri güncellenir.
